@@ -7,6 +7,13 @@ const initState = {
 }
 
 const projectReducer = (state = initState,action) => {
+    switch(action.type) {
+        case 'CREATE_PROJECT':
+            let projects = state.projects.concat([{...action.project, id: 4}]);
+            return {...state, projects: projects}
+            console.log(action.project);
+            break;
+    }
     return state;
 }
 
