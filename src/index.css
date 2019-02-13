@@ -6,6 +6,17 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: #006699;
+}
+
+form {
+  padding: 20px;
+  margin-top: 60px;
+
+}
+
+form button, form h5 {
+  margin: 20px 0;
 }
 
 code {
