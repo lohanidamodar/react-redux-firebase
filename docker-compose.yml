@@ -1,0 +1,12 @@
+version: "2"
+
+services:
+  react:
+    image: dlohani/reactjs
+    ports:
+      - "3051:3000"
+    volumes:
+      - ./:/app
+    working_dir: /app
+    entrypoint: yarn start
+    restart: always
