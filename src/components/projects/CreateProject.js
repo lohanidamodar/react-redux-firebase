@@ -5,7 +5,7 @@ import { connect } from 'react-redux'
 class CreateProject extends Component {
     state = {
         title: '',
-        conten: ''
+        content: ''
     }
 
     handleChange = (e) => {
