@@ -24,3 +24,20 @@ exports.projectCreated = functions.firestore
         };
         return createNotification(notification);
     })
+
+exports.userJoinded = functions.auth.user()
+    .onCreate(user=>{
+        return admin.firestore().collection('users')
+            .doc(user.uid)
+            .get()
+            .then(doc=>{
+                const newUser = doc.data();
+                const notification = {
+                    content: 'Joined the party',
+                    user: `${newUser.first_name} ${newUser.last_name}`,
+                    time: admin.firestore.FieldValue.serverTimestamp()
+                }
+                return createNotification(notification);
+
+            });
+    })

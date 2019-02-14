@@ -8,7 +8,12 @@ const Notifications = props => {
         <div className="card-content">
           <span className="card-title">Notifications</span>
           <ul className="notifications">
-            {props.notifications && props.notifications.map(notification=><li>{notification.content} by {notification.user} {moment(notification.time.toDate()).calendar()}</li>)}
+            {props.notifications && props.notifications
+              .map(notification=><li key={notification.id}>
+                <span className="pink-text">{notification.user} </span>
+                {notification.content}
+                <span className="grey-text note-date"> {moment(notification.time.toDate()).calendar()}</span>
+              </li>)}
           </ul>
         </div>
       </div>
